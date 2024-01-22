@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{%block content%}
+
+        <h1>Add Contacts</h1>
+       <form action="addContacts" method="get">
+         <input type="submit" value="Add">
+           </form>
+
+         <h1>Edit Contacts</h1>
+       <form action="editContacts" method="get">
+         <input type="submit" value="Edit Contact">
+           </form>
+
+        <div>
+        <h1>Search</h1>
+         <form action="search" method="get">
+         <input type="submit" name = 'search'>
+         </form>
+             </div>
+
+    <div>
+    <h1>Search by name</h1>
+    <form action="searchbyname" method="post">
+    {% csrf_token %}
+    <input type="text" name="name" placeholder="Contact name">
+    <input type="submit" value="search">
+    </form>
+    </div>
+
+<div>
+    <h1>Delete Contact</h1>
+    <form action="delete">
+         <input type="text" name="name" placeholder="Contact name">
+         <input type="submit" value="delete">
+    </form>
+    <h3>{{response}}</h3>
+</div>
+
+
+<div>
+    <h1>Delete Contact</h1>
+    <form action="deleteAll">
+         <input type="submit" value="delete All Contacts">
+    </form>
+    <h3>{{response}}</h3>
+    </div>
+
+<div>
+    <h1>Block Contact</h1>
+    <form action="blockContact">
+        <input type="text" name="name" placeholder="Contact name">
+         <input type="submit" value="block contact">
+    </form>
+    <h3>{{response}}</h3>
+   </div>
+
+<div>
+    <h1>Unblock Contact</h1>
+    <form action="UnblockContact">
+        <input type="text" name="name" placeholder="Contact name">
+         <input type="submit" value="unblock contact">
+    </form>
+    <h3>{{returns}}</h3>
+
+   </div>
+
+
+
+{%endblock%}

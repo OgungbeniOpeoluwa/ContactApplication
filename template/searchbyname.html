@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    Name:{{contact.name}}<br>
+
+    phone_number{{contact.phone_number}}<br>
+    address:{{contact.address}}<br>
+    email: {{contact.email}}<br>
+
+
+<form action="back">
+    <input type="submit" value="Go back to views">
+</form>
+
+
+<div>
+{%for message in messages%}
+    <h3>{{message}}</h3>
+    {%endfor%}
+    </div>
+{%endblock%}

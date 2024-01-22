@@ -1,0 +1,22 @@
+{% extends 'base.html'%}
+{%block content%}
+<form action="addContacts" method="post">
+    {% csrf_token %}
+    {% if user.is_authenticated %}
+    <input type="text" name ='name' placeholder="name"><br>
+    <input type ="text" name='phone_number' placeholder="phone number"><br>
+    <input type ="text" name='address' placeholder="adress"><br>
+    <input type ="text" name='email' placeholder="email"><br>
+    <input type="submit" >
+    </form>
+    {%endif%}
+<!--users:{{user.get_username}}-->
+<form action="back">
+    <input type="submit" value="Go back to views">
+</form>
+<div>
+    {%for message in messages%}
+    <h3>{{message}}</h3>
+    {%endfor%}
+</div>
+{%endblock%}
